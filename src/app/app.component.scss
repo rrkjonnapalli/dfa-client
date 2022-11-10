@@ -1,0 +1,17 @@
+.lc-root {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.lc-item {
+  // display: inline;
+  width: 33%;
+  // align-self: flex-start;
+}
+
+.env-btn {
+  margin-top: 1em;
+  text-align: center;
+}
