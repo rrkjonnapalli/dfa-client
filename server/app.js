@@ -2,6 +2,9 @@ const express = require('express');
 const config = require('../config');
 const app = express();
 
+if (config.NODE_ENV !== 'production') {
+  app.use(require('cors')());
+}
 
 app.use(express.json({}));
 app.use(express.urlencoded({ extended: true }));
