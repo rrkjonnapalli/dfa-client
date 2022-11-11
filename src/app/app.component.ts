@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DfaService } from './services/core/dfa.service';
 import { TitleService } from './services/shared/title.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { TitleService } from './services/shared/title.service';
 export class AppComponent implements OnInit {
   title = 'DFA';
 
-  constructor(private ts: TitleService) { }
+  constructor(private ts: TitleService, private dfaService: DfaService) { }
 
   ngOnInit(): void {
     this.ts.setTitle(this.title);
+  }
+
+  refreshBuild(): void {
+    this.dfaService.refreshBuild();
   }
 }
