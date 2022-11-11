@@ -1,0 +1,15 @@
+.lc-root {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.lc-item {
+    width: 33%;
+}
+
+.env-btn {
+    margin-top: 1em;
+    text-align: center;
+}

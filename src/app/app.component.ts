@@ -9,18 +9,6 @@ import { TitleService } from './services/shared/title.service';
 export class AppComponent implements OnInit {
   title = 'DFA';
 
-  services = [
-    'Kafka',
-    'Zookeeper',
-    'ELK',
-    'Kibana',
-    'Nifi',
-    'MongoDB',
-    'MySQL',
-    'Postgres',
-    'Keycloak'
-  ]
-
   constructor(private ts: TitleService) { }
 
   ngOnInit(): void {

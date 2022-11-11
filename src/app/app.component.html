@@ -2,35 +2,5 @@
 
 <div class="container">
   <h3>{{title}}</h3>
-  <div class="service-list">
-    <ul class="lg list-group">
-      <li class="lc-root list-group-item">
-        <div class="lc-item services">Services</div>
-        <div class="lc-item ssl">SSL</div>
-        <div class="lc-item env-size">Env Size</div>
-      </li>
-
-      <li class="lc-root list-group-item" *ngFor="let service of services">
-        <div class="lc-item form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch"
-            [id]="service+'Switch'">
-          <label class="form-check-label"
-            [for]="service+'Switch'">{{service}}</label>
-        </div>
-        <div class="lc-item form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch"
-            id="sslSwitch">
-          <label class="form-check-label" for="sslSwitch">SSL</label>
-        </div>
-        <div class="lc-item form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch"
-            id="envSizeSwitch">
-          <label class="form-check-label" for="envSizeSwitch">Production</label>
-        </div>
-      </li>
-    </ul>
-    <div class="env-btn">
-      <button class="btn btn-primary">Create Environment</button>
-    </div>
-  </div>
+  <app-create-env></app-create-env>
 </div>
