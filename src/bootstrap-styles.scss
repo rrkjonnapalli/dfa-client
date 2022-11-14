@@ -1,3 +1,4 @@
+// @import "bootstrap";
 
 // Toggle global options
 $enable-gradients: true;
@@ -14,6 +15,7 @@ $success: #7952b3;
 @import "bootstrap/scss/mixins"; // Required
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/containers";
+@import "bootstrap/scss/nav";
 
 @import "bootstrap/scss/root"; // Required
 @import "bootstrap/scss/reboot"; // Required
@@ -30,10 +32,12 @@ $success: #7952b3;
 @import "bootstrap/scss/tooltip";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/spinners";
-@import "bootstrap/scss/navbar"; // Requires nav
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/list-group";
+
+
+@import "bootstrap/scss/navbar"; // Requires nav
 
 
 // @import "bootstrap/scss/button-group";

@@ -1,9 +1,27 @@
 <router-outlet></router-outlet>
 
-<div class="container">
-  <h3>{{title}}</h3>
-  <div class="refresh-btn">
-    <button class="btn btn-primary btn-sm" (click)="refreshBuild()">Refresh Build</button>
+<div class="container-fluid">
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
+          alt="Bootstrap" width="30" height="24" />
+        AWS Framework
+      </a>
+
+      <div class="right-group">
+      </div>
+    </div>
+  </nav>
+  <div class="action-btn-group">
+    <button class="btn btn-primary btn-sm action-btn"
+      (click)="refreshBuild()">Create
+      Environment</button>
+    <button class="btn btn-primary btn-sm action-btn"
+      (click)="refreshBuild()">Refresh
+      Build</button>
   </div>
   <app-create-env></app-create-env>
 </div>
