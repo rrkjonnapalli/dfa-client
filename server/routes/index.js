@@ -20,4 +20,6 @@ router.post('/create-environment', (req, res) => {
   res.send({ status: 'success' });
 });
 
+router.use(require('./restify'));
+
 module.exports = router;
