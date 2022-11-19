@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateEnvComponent } from './components/core/forms/create-env/create-env.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CreateEnvComponent } from './components/core/forms/create-env/create-en
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

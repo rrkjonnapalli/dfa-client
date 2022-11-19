@@ -1,12 +1,12 @@
 const path = require('path');
 const { Sequelize } = require('sequelize');
-const { SQLITE_DB_PATH, SQLITE_LOG, CLONE_DIR } = require('@config');
+const { SQLITE_DB_PATH, SQLITE_LOG, EXTERNAL_DIR } = require('@config');
 
 const { definitions, associations } = require('./model');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: path.join(__dirname, '../..',  CLONE_DIR , SQLITE_DB_PATH),
+  storage: path.join(__dirname, '../..',  EXTERNAL_DIR , SQLITE_DB_PATH),
   logging: SQLITE_LOG
 });
 

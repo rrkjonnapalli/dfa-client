@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const config = require('../config');
 
-const externalPath = path.join(__dirname, '..', config.CLONE_DIR);
+const externalPath = path.join(__dirname, '..', config.EXTERNAL_DIR);
 
 
 const init = async () => {

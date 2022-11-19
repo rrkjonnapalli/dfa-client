@@ -1,27 +1,56 @@
 <div class="create-env">
-    <ul class="lg list-group">
+  <form (ngSubmit)="createEnv()">
+
+    <div class="mb-3">
+      <label for="envTitle" class="form-label">Environment Name</label>
+      <input class="form-control" type="text" id="envTitle"
+        placeholder="Environment name" name="envTitle" [(ngModel)]="doc.title">
+    </div>
+    <div class="mb-3">
+      <label for="envCode" class="form-label">Environment Code</label>
+      <input class="form-control mb-2" type="text"
+        placeholder="Environment code" name="envCode" [(ngModel)]="doc.code">
+    </div>
+
+
+    <div class="mb-3">
+      <label for="envServices" class="form-label">Select Services</label>
+      <ul class="lg list-group" id="envServices">
         <li class="lc-root list-group-item">
-            <div class="lc-item services">Services</div>
-            <div class="lc-item ssl">SSL</div>
-            <div class="lc-item env-size">Env Size</div>
+          <div class="lc-item services">Services</div>
+          <div class="lc-item ssl">SSL</div>
+          <div class="lc-item env-size">Env Size</div>
         </li>
 
-        <li class="lc-root list-group-item" *ngFor="let service of services">
-            <div class="lc-item form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" [id]="service+'Switch'">
-                <label class="form-check-label" [for]="service+'Switch'">{{service}}</label>
-            </div>
-            <div class="lc-item form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="sslSwitch">
-                <label class="form-check-label" for="sslSwitch">SSL</label>
-            </div>
-            <div class="lc-item form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="envSizeSwitch">
-                <label class="form-check-label" for="envSizeSwitch">Production</label>
-            </div>
+        <li class="lc-root list-group-item"
+          *ngFor="let service of services; let i = index">
+          <div class="lc-item form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"
+              name="enableService" [id]="service+'Switch'"
+              [(ngModel)]="doc.services[i].enabled">
+            <label class="form-check-label"
+              [for]="service+'Switch'">{{service}}</label>
+          </div>
+          <div class="lc-item form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"
+              name="enableSSL" id="sslSwitch" [(ngModel)]="doc.services[i].ssl">
+            <label class="form-check-label" for="sslSwitch">SSL</label>
+          </div>
+          <div class="lc-item form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"
+              name="isProduction" id="envSizeSwitch"
+              [(ngModel)]="doc.services[i].isProduction">
+            <label class="form-check-label"
+              for="envSizeSwitch">Production</label>
+          </div>
         </li>
-    </ul>
-    <div class="env-btn">
-        <button class="btn btn-primary btn-sm">Create Environment</button>
+      </ul>
     </div>
+
+    <div class="env-btn">
+      <button class="btn btn-primary btn-sm" type="submit">Create
+        Environment</button>
+    </div>
+  </form>
+
 </div>

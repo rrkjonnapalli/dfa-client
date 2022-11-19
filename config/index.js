@@ -3,7 +3,7 @@ const SQLITE_SYNC = process.env.SQLITE_SYNC === 'true';
 const SQLITE_LOG = process.env.SQLITE_LOG || false;
 
 module.exports = {
-  CLONE_DIR: 'external',
+  EXTERNAL_DIR: 'external',
   REPO_DIR: 'repo',
   REPO_LINK: 'https://github.com/subhamproject/shell_script_repo.git',
   PORT: process.env.PORT || '8090',

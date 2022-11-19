@@ -8,13 +8,14 @@ const server = http.createServer(app);
 
 const unknownErrorHandler = (error, _origin) => {
   console.log('Unknown error', error);
-}
+};
+
 process.on('uncaughtException', unknownErrorHandler)
 process.on('unhandledRejection', unknownErrorHandler)
 
 const initSetup = async () => {
-  return setupModels({sync: true});
-}
+  return setupModels({ sync: config.SQLITE_SYNC });
+};
 
 initSetup().then(() => {
   const listener = server.listen(config.PORT);
@@ -30,4 +31,4 @@ const setupServerListeners = (listener) => {
   listener.on('error', (e) => {
     console.log(`Error while listening `, e);
   });
-}
+};

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs/promises');
 const config = require('@config');
 
-const externalPath = path.join(__dirname, '..', config.CLONE_DIR);
+const externalPath = path.join(__dirname, '..', config.EXTERNAL_DIR);
 
 const run = (cmd, opts = {}) => {
   return new Promise((resolve) => {
