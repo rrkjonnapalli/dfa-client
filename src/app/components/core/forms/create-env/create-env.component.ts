@@ -50,11 +50,15 @@ export class CreateEnvComponent implements OnInit {
     console.log(this.doc);
     const services = this.doc.services.filter((v: any) => v.enabled);
     if (!services.length) {
-      alert('Please select some services');
+      const msg = 'Please select some services';
+      alert(msg);
+      throw new Error(msg)
     }
     const { title } = this.doc;
     if (!title || !title.trim()) {
-      alert('Environment name is a required field');
+      const msg = 'Environment name is a required field';
+      alert(msg);
+      throw new Error(msg);
     }
     const data = {
       name: this.doc.title,
