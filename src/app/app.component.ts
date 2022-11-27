@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   utils: any = {};
   createEnvHandler = this.onSubmit.bind(this);
   environments: any = [];
+  services: any = [];
 
 
 
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
     const createEnvModel = new bootstrap.Modal('#createEnvModel');
     this.utils.createEnvModel = createEnvModel;
     // this.utils.createEnvModel.
-    this.loadEnvironments();
+    this.loadServices();
   }
 
   loadEnvironments() {
@@ -46,6 +47,14 @@ export class AppComponent implements OnInit {
       }
     });
   }
+  loadServices() {
+    this.dfaService.read('Service', {}).subscribe((response: any) => {
+      console.log('load services', response);
+      if (Array.isArray(response)) {
+        this.services = response;
+      }
+    });
+  }
 
   refreshBuild(): void {
     this.dfaService.refreshBuild().subscribe((response) => {
@@ -64,7 +73,7 @@ export class AppComponent implements OnInit {
     this.dfaService.create(model, { body }).subscribe((response) => {
       console.log('onSubmit result', response);
       this.toggleModel();
-      this.loadEnvironments();
+      this.loadServices();
     });
   }
 

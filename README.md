@@ -10,6 +10,8 @@ REPO_DIR | Cloned repository name (default: repo)
 REPO_LINK | Github repository link to clone
 EXTERNAL_DIR | Parent directory for the repository cloning (default: external)
 SQLITE_SYNC | true/false, (default: false), if true it will create a new DB or overwrite the existing db, if false uses the existing db 
+SERVCIE_LIST | A comma(,) seperate list of service names, (default: 'vpc,kibana,elasticsearch,kafka,zk,jenkins,nexus,grafana,mongo,rabbitmq,prometheus')
+ENV_TYPES | A comma(,) seperate list of environment type names, (default: 'Production,Staging,Test,Development,UA')
 
 Commands to run
 

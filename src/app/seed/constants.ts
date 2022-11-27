@@ -1,5 +1,6 @@
 export const modelRouteMap: any = {
-  Env: 'environments'
+  Env: 'environments',
+  Service: 'services',
 };
 
 export const httpMethodMap: any = {

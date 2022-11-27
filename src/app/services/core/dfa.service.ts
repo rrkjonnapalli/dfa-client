@@ -17,6 +17,11 @@ export class DfaService {
     return this.http.get(url);
   }
 
+  getEnvConfig() {
+    const url = `${this.root}/env-config`;
+    return this.http.get(url);
+  }
+
   private __request(model: string, method: string, opts?: any) {
     const suffix = modelRouteMap[model];
     const url = `${this.root}/${suffix}`;

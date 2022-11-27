@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateEnvComponent } from './components/core/forms/create-env/create-env.component';
 import { FormsModule } from '@angular/forms';
+import { CreateServiceComponent } from './components/core/forms/create-service/create-service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEnvComponent
+    CreateEnvComponent,
+    CreateServiceComponent
   ],
   imports: [
     BrowserModule,

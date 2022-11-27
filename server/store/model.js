@@ -33,13 +33,43 @@ const Env = {
   }
 };
 
+const Service = {
+  modelName: 'Service',
+  def: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    envType: {
+      type: DataTypes.STRING
+    },
+    ssl: {
+      type: DataTypes.BOOLEAN,
+      default: false
+    },
+    cluster: {
+      type: DataTypes.BOOLEAN,
+      default: false
+    }
+  },
+  options: {
+    tableName: 'services',
+    timestamps: true,
+    modelName: 'Service',
+    indexes: [
+    ]
+  }
+};
+
 const associations = [
 ]
 
 module.exports = {
   Env,
+  Service,
   associations,
   definitions: [
-    Env
+    Env,
+    Service
   ]
 }
