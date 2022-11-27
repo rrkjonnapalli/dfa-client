@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+
+  dfa:
+    build: AWS/
+    image: dfa-client
+    restart: always
+    container_name: dfa
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      REPO_DIR: ${REPO:-repo}
+      EXTERNAL_DIR: ${DIR:-external}
+      SQLITE_SYNC: "true"
+    volumes:
+      - /external:/data/external
